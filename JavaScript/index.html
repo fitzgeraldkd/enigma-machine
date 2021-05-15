@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Enigma</title>
+		<meta charset="utf-8"/>
+        <script src="./script.js"></script>
+		<style>
+			.header {text-align: center; font-weight: bold}
+			td {vertical-align: top;}
+		</style>
+	</head>
+	<body>
+		<table><tr><td>
+		<table>
+			<tr>
+				<td colspan=2 class="header"><span width=100% class="header">Plugboard</span></td>
+			</tr>
+			<tr>
+				<td>A:</td>
+				<td><input type="text" id="pbA" maxlength="1" size="1" onchange="updatePlugboard('A')"></td>
+				<td>N:</td>
+				<td><input type="text" id="pbN" maxlength="1" size="1" onchange="updatePlugboard('N')"></td>
+			</tr>
+			<tr>
+				<td>B:</td>
+				<td><input type="text" id="pbB" maxlength="1" size="1" onchange="updatePlugboard('B')"></td>
+				<td>O:</td>
+				<td><input type="text" id="pbO" maxlength="1" size="1" onchange="updatePlugboard('O')"></td>
+			</tr>
+			<tr>
+				<td>C:</td>
+				<td><input type="text" id="pbC" maxlength="1" size="1" onchange="updatePlugboard('C')"></td>
+				<td>P:</td>
+				<td><input type="text" id="pbP" maxlength="1" size="1" onchange="updatePlugboard('P')"></td>
+			</tr>
+			<tr>
+				<td>D:</td>
+				<td><input type="text" id="pbD" maxlength="1" size="1" onchange="updatePlugboard('D')"></td>
+				<td>Q:</td>
+				<td><input type="text" id="pbQ" maxlength="1" size="1" onchange="updatePlugboard('Q')"></td>
+			</tr>
+			<tr>
+				<td>E:</td>
+				<td><input type="text" id="pbE" maxlength="1" size="1" onchange="updatePlugboard('E')"></td>
+				<td>R:</td>
+				<td><input type="text" id="pbR" maxlength="1" size="1" onchange="updatePlugboard('R')"></td>
+			</tr>
+			<tr>
+				<td>F:</td>
+				<td><input type="text" id="pbF" maxlength="1" size="1" onchange="updatePlugboard('F')"></td>
+				<td>S:</td>
+				<td><input type="text" id="pbS" maxlength="1" size="1" onchange="updatePlugboard('S')"></td>
+			</tr>
+			<tr>
+				<td>G:</td>
+				<td><input type="text" id="pbG" maxlength="1" size="1" onchange="updatePlugboard('G')"></td>
+				<td>T:</td>
+				<td><input type="text" id="pbT" maxlength="1" size="1" onchange="updatePlugboard('T')"></td>
+			</tr>
+			<tr>
+				<td>H:</td>
+				<td><input type="text" id="pbH" maxlength="1" size="1" onchange="updatePlugboard('H')"></td>
+				<td>U:</td>
+				<td><input type="text" id="pbU" maxlength="1" size="1" onchange="updatePlugboard('U')"></td>
+			</tr>
+			<tr>
+				<td>I:</td>
+				<td><input type="text" id="pbI" maxlength="1" size="1" onchange="updatePlugboard('I')"></td>
+				<td>V:</td>
+				<td><input type="text" id="pbV" maxlength="1" size="1" onchange="updatePlugboard('V')"></td>
+			</tr>
+			<tr>
+				<td>J:</td>
+				<td><input type="text" id="pbJ" maxlength="1" size="1" onchange="updatePlugboard('J')"></td>
+				<td>W:</td>
+				<td><input type="text" id="pbW" maxlength="1" size="1" onchange="updatePlugboard('W')"></td>
+			</tr>
+			<tr>
+				<td>K:</td>
+				<td><input type="text" id="pbK" maxlength="1" size="1" onchange="updatePlugboard('K')"></td>
+				<td>X:</td>
+				<td><input type="text" id="pbX" maxlength="1" size="1" onchange="updatePlugboard('X')"></td>
+			</tr>
+			<tr>
+				<td>L:</td>
+				<td><input type="text" id="pbL" maxlength="1" size="1" onchange="updatePlugboard('L')"></td>
+				<td>Y:</td>
+				<td><input type="text" id="pbY" maxlength="1" size="1" onchange="updatePlugboard('Y')"></td>
+			</tr>
+			<tr>
+				<td>M:</td>
+				<td><input type="text" id="pbM" maxlength="1" size="1" onchange="updatePlugboard('M')"></td>
+				<td>Z:</td>
+				<td><input type="text" id="pbZ" maxlength="1" size="1" onchange="updatePlugboard('Z')"></td>
+			</tr>
+		</table>
+		</td><td>
+		<table>
+			<tr>
+				<td class="header">Rotor</td>
+				<td class="header">ID</td>
+				<td class="header">Step</td>
+				<td class="header">Setting</td>
+			</tr>
+			<tr>
+				<td>Rotor A:</td>
+				<td>
+					<select id="rotorA">
+						<option value="I" selected>I</option>
+						<option value="II">II</option>
+						<option value="III">III</option>
+						<option value="IV">IV</option>
+						<option value="V">V</option>
+					</select>
+				</td>
+				<td><input type="text" id="rotorAstep" maxlength="2" size="2" value="A"></td>
+				<td><input type="text" id="rotorAsetting" maxlength="2" size="2" value="A"></td>
+			</tr>
+			<tr>
+				<td>Rotor B:</td>
+				<td>
+					<select id="rotorB">
+						<option value="I">I</option>
+						<option value="II" selected>II</option>
+						<option value="III">III</option>
+						<option value="IV">IV</option>
+						<option value="V">V</option>
+					</select>
+				</td>
+				<td><input type="text" id="rotorBstep" maxlength="2" size="2" value="A"></td>
+				<td><input type="text" id="rotorBsetting" maxlength="2" size="2" value="A"></td>
+			</tr>
+			<tr>
+				<td>Rotor C:</td>
+				<td>
+					<select id="rotorC">
+						<option value="I">I</option>
+						<option value="II">II</option>
+						<option value="III" selected>III</option>
+						<option value="IV">IV</option>
+						<option value="V">V</option>
+					</select>
+				</td>
+				<td><input type="text" id="rotorCstep" maxlength="2" size="2" value="A"></td>
+				<td><input type="text" id="rotorCsetting" maxlength="2" size="2" value="A"></td>
+			</tr>
+		</table>
+		<br />
+		<table>
+			<tr>
+				<td>Input:</td>
+				<td><textarea type="text" id="textInput"></textarea></td>
+			</tr>
+			<tr>
+				<td>Output:</td>
+				<td><textarea id="textOutput" readonly></textarea></td>
+			</tr>
+		</table>
+		<button onclick="cipher()">Submit</button>
+		</td></tr></table>
+	</body>
+</html>
